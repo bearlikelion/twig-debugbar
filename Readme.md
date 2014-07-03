@@ -5,8 +5,8 @@ A simple twig extension to provide rendering functions for the [PHP Debug Bar](h
 ##Example:
 
 ```PHP
-$twig = new \Twig_Environment(new \Twig_Loader_Filesystem('Views'));
-$twig->addExtension(new \Bearlikelion\TwigDebugBar\Extension);
+$twig = new Twig_Environment(new Twig_Loader_Filesystem('Views'));
+$twig->addExtension(new Bearlikelion\TwigDebugBar\Extension);
 ```
 
 ```html
