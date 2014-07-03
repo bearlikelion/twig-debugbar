@@ -20,7 +20,7 @@ $twig->addExtension(new Bearlikelion\TwigDebugBar\Extension);
 </html>
 ```
 
-### Debug Bar Assets
+## Debug Bar's Assets
 I use nginx, and on the dev enviornment load the Debug Bar assets directly from the /vendor/ folder.  This is because by default, Debug Bar's renderHead function returns the assets pointing to /vendor/maximebf...
 
 Using a simple nginx location I forward all requests to the propery directory, if there's a demand I will provide an option to set the asset path in the constructor.
