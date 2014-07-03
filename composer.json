@@ -1,0 +1,22 @@
+{
+	"name": "bearlikelion/twigdebugbar",
+	"type": "library",
+	"description": "A simple Twig extension to provide render functions for maximebf/debugbar",
+	"keywords": ["Twig", "Extension", "Debug", "Debug Bar", "DebugBar", "PHPdebugbar", "PHP debug bar", "PHP debugbar", "maximebf"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Mark Arneman",
+			"homepage": "http://arneman.me"
+		}
+	],
+	"require": {
+		"php": ">=5.3.0",
+		"twig/twig": "*",
+		"maximebf/debugbar": "*"
+
+	},
+	"autoload": {
+		"files": ["Extension.php"]
+	}
+}
