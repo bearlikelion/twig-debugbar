@@ -1,5 +1,5 @@
 {
-	"name": "bearlikelion/twigdebugbar",
+	"name": "bearlikelion/twig-debugbar",
 	"type": "library",
 	"description": "A simple Twig extension to provide render functions for maximebf/debugbar",
 	"keywords": ["Twig", "Extension", "Debug", "Debug Bar", "DebugBar", "PHPdebugbar", "PHP debug bar", "PHP debugbar", "maximebf"],
