@@ -2,7 +2,7 @@
 
 A simple twig extension to provide rendering functions for the [PHP Debug Bar](http://github.com/maximebf/php-debugbar).  This extension loads the StandardDebugBar and provides the functions *dbg_renderHead* and *dbg_render* for Twig templates.
 
-##Example:
+## Example
 
 ```PHP
 $twig = new Twig_Environment(new Twig_Loader_Filesystem('Views'));
