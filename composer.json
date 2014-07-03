@@ -1,7 +1,6 @@
 {
 	"name": "bearlikelion/twig-debugbar",
 	"type": "library",
-	"version": "1.0.0",
 	"description": "A Twig extension to provide access to PHP Debug Bar's rendering functions.",
 	"keywords": ["twig", "extension", "debug", "bar"],
 	"license": "MIT",
@@ -19,5 +18,6 @@
 	},
 	"autoload": {
 		"files": ["Extension.php"]
-	}
+	},
+	"version": "1.0.0"
 }
