@@ -25,7 +25,7 @@ I use nginx, and on the dev enviornment load the Debug Bar assets directly from 
 
 Using a simple nginx location I forward all requests to the propery directory, if there's a demand I will provide an option to set the asset path in the constructor.
 
-```
+```nginx
 location ~* ^/vendor/(.+\.(jpg|jpeg|gif|css|png|js|ico|html|xml|txt))$ {
 	root /var/www/app; # /var/www/app/vendor
 }
