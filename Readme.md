@@ -27,7 +27,7 @@ $twig->addExtension(new Bearlikelion\TwigDebugBar\Extension);
 		{{ dgb_renderHead() }}
 	</head>
 	<body>
-		{{ dbg_renderBody() }}
+		{{ dbg_render() }}
 	</body>
 </html>
 ```
