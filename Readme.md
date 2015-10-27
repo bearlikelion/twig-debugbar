@@ -1,6 +1,6 @@
 # Twig Debug Bar
 
-A simple twig extension to provide rendering functions for the [PHP Debug Bar](http://github.com/maximebf/php-debugbar).  This extension loads the StandardDebugBar and provides the functions *dbg_renderHead* and *dbg_render* for Twig templates.
+A simple twig extension to provide rendering functions for the [PHP Debug Bar](http://github.com/maximebf/php-debugbar).  This extension loads the StandardDebugBar and provides the functions *dbg_message*, *dbg_renderHead*, and *dbg_render* for Twig.
 
 **Requirements:**
 
@@ -18,15 +18,19 @@ A simple twig extension to provide rendering functions for the [PHP Debug Bar](h
 
 ```PHP
 $twig = new Twig_Environment(new Twig_Loader_Filesystem('Views'));
-$twig->addExtension(new Bearlikelion\TwigDebugBar\Extension);
+$twig->addExtension(new Bearlikelion\TwigDebugBar\Extension('/Path')); // Relative assets path to your web directory e.g. /assets/debug/
 ```
 
 ```html
 <html>
 	<head>
-		{{ dgb_renderHead() }}
+		{{ dbg_renderHead() }}
 	</head>
 	<body>
+        <!-- Array dump -->
+        {{ dbg_message(array) }}
+        <!-- Labeled Message -->
+        {{ dbg_message('Something Wrong', 'error') }}
 		{{ dbg_render() }}
 	</body>
 </html>
@@ -42,3 +46,6 @@ location ~* ^/vendor/(.+\.(jpg|jpeg|gif|css|png|js|ico|html|xml|txt))$ {
 	root /var/www/app; # /var/www/app/vendor
 }
 ```
+
+### 1.1 change
+Allows the asset directory to be defined in the constructor relative to the web root.

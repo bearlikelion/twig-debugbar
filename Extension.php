@@ -8,34 +8,43 @@
 
 namespace Bearlikelion\TwigDebugBar;
 
-Class Extension extends \Twig_Extension
+class Extension extends \Twig_Extension
 {
-	public function __construct()
-	{
-		$this->debugbar = new \DebugBar\StandardDebugBar();
-		$this->renderer = $this->debugbar->getJavascriptRenderer();
-	}
+    public function __construct($assetPath = null)
+    {
+        $this->debugbar = new \DebugBar\StandardDebugBar();
+        $this->renderer = $this->debugbar->getJavascriptRenderer();
+        if (!is_null($assetPath)) {
+            $this->renderer->setBaseUrl($assetPath);
+        }
+    }
 
-	public function getFunctions()
-	{
-		return array(
-			'dbg_render' => new \Twig_Function_Method($this, 'render',  array('is_safe' => array('html'))),
-			'dbg_renderHead'  => new \Twig_Function_Method($this, 'renderHead',  array('is_safe' => array('html')))
-		);
-	}
+    public function getFunctions()
+    {
+        return array(
+            'dbg_message' => new \Twig_Function_Method($this, 'message'),
+            'dbg_render' => new \Twig_Function_Method($this, 'render', ['is_safe' => ['html']]),
+            'dbg_renderHead'  => new \Twig_Function_Method($this, 'renderHead', ['is_safe' => ['html']]),
+        );
+    }
 
-	public function render()
-	{
-		return $this->renderer->render();
-	}
+    public function message($text, $label = info)
+    {
+        $this->debugbar['messages']->addMessage($text, $label);
+    }
 
-	public function renderHead()
-	{
-		return $this->renderer->renderHead();
-	}
+    public function render()
+    {
+        return $this->renderer->render();
+    }
 
-	public function getName()
-	{
-		return 'debugbar_extension';
-	}
+    public function renderHead()
+    {
+        return $this->renderer->renderHead();
+    }
+
+    public function getName()
+    {
+        return 'debugbar_extension';
+    }
 }
