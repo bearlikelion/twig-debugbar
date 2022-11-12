@@ -5,7 +5,7 @@ A simple twig extension to provide rendering functions for the [PHP Debug Bar](h
 **Requirements:**
 
 * [Twig](https://github.com/fabpot/Twig)
-* [PHP Debug Bar](http://github.com/maximebf/php-debugba)
+* [PHP Debug Bar](http://github.com/maximebf/php-debugbar)
 
 ## Installation
 ```
